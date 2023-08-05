@@ -12,6 +12,7 @@
             {% if user.is_superuser %}
                 <div class="d-flex justify-content-center my-2">
                     <a class="btn btn-outline-warning btn-sm" role="button" href="{% url 'edit_service' service.id %}">Edit Service</a>
+                    <a class="btn btn-outline-warning btn-sm" role="button" href="{% url 'delete_service' service.id %}">Delete Service</a>
                 </div>
             {% endif %}
         </div>
