@@ -29,11 +29,15 @@
                     <li class="nav-item"><a class="nav-link" href="">Price List</a></li>
                     <li class="nav-item"><a class="nav-link" href="">Book Now</a></li>
                     <li class="nav-item"><a class="nav-link" href="">Contacts</a></li>
-                    <li class="nav-item"><a class="nav-link" href="">Sign up</a></li>
                 </ul>
-                <div class="dropdown mt-3 mb-1">
+                {% if request.user.is_authenticated %}
+                    <div class="nav-item nav-link text-black mx-auto">Hi, {{ user|capfirst }}!</div>
+                    {% else %}
+                    <div></div>
+                {% endif %}
+                <div class="dropdown mt-3 mb-1 mx-auto">
                     <a aria-expanded="false" data-bs-toggle="dropdown" href="#">
-                        <span class="d-flex flex-column navbar-text me-2 bs-icon">
+                        <span class="d-flex flex-column navbar-text me-2 bs-icon ds-icon">
                             <i class="las la-user-circle"></i>
                             <p>Account</p>
                         </span>
@@ -57,11 +61,11 @@
     </nav>
 
     <div class="container">
-        <div class="row my-2">
+        <div class="row">
             <div class="col-md-8 offset-md-2">
                 {% for message in messages %}
-                <div class="alert {{ message.tags }} bg-{{ message.tags}}-subtle alert-dismissible fade show" id="msg" role="alert">
-                    {{ message }}
+                <div class="alert {{ message.tags }} bg-{{ message.tags}}-subtle alert-dismissible fade show my-2" id="msg" role="alert">
+                    {{ message | safe }}
                     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                 </div>
                 {% endfor %}

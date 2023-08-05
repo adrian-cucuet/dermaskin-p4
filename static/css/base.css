@@ -10,8 +10,14 @@
     color: var(--bs-primary);
 }
 
-.bs-icon i {
+.ds-icon i {
+    display: flex;
+    flex-shrink: 0;
+    justify-content: center;
+    align-items: center;
     font-size: 2rem;
+    width: calc(var(--bs-icon-size) * 2);
+    height: calc(var(--bs-icon-size) * 2);
     color: var(--bs-primary);
 }
 
@@ -72,7 +78,7 @@
     height: 100%;
 }
 
-.ds-icon {
+.ds-icon-home {
     top: 1rem;
     right: 1rem;
     position: absolute;

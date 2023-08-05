@@ -10,8 +10,8 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 
-from pathlib import Path
 import os
+from pathlib import Path
 import dj_database_url
 if os.path.isfile('env.py'):
     import env
@@ -49,9 +49,12 @@ INSTALLED_APPS = [
     'cloudinary',
     'home',
     'services',
+    'bookings',
 
     # 3rd party
     'django_summernote',
+    'crispy_forms',
+    'crispy_bootstrap4',
 ]
 
 SITE_ID = 1
@@ -70,6 +73,9 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'dermaskin.urls'
+
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
+CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap4"
 
 TEMPLATES = [
     {

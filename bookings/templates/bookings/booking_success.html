@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<section class="py-5">
+    <div class="container py-5">
+        <div class="row mb-5">
+            <div class="col-md-8 col-xl-6 text-center mx-auto">
+                <h2 class="fw-bold text-success">Appointment successfuly created.</h2>
+                <p class="text-muted">Your appointment number is {{ booking_number }}</p>
+                <p class="text-muted">We will contact you shorty on {{ booking.phone }} to confirm the appointment.</p>
+                <br>
+                <a class="btn btn-outline-dark btn-sm" role="button" href="{% url 'home' %}"><i class="las la-arrow-left la-lg"></i> Back Home</a>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col d-flex justify-content-center p-4">
+                <div class="table-responsive text-center">
+                    <table class="table table-borderless">
+                        <thead>
+                            <tr>
+                                <th>Appointment details:</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Name:</strong> {{ booking.name }}</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Date:</strong> {{ booking.date }}</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Prefered time:</strong> {{ booking.time }}</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Service:</strong> {{ booking.service }}</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Package:</strong> {{ booking.package }}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
