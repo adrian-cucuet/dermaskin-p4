@@ -9,4 +9,6 @@ class ServiceAdmin(SummernoteModelAdmin):
     list_display = ('name', 'price')
     search_fields = ['name']
     list_filter = ('name',)
-    summernote_fields = ('description', 'benefits', 'faq1_answer', 'faq2_answer', 'faq3_answer')
+    prepopulated_fields = {'slug': ('name',)}
+    summernote_fields = ('description', 'benefits', 'faq1_answer',
+                         'faq2_answer', 'faq3_answer')

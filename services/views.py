@@ -13,8 +13,8 @@ def services(request):
     return render(request, 'services/services.html', context)
 
 
-def service_detail(request, service_id):
-    service = get_object_or_404(Service, pk=service_id)
+def service_detail(request, slug):
+    service = get_object_or_404(Service, slug=slug)
     price_two = service.price * 3
     package_two = price_two - (price_two * Decimal(0.15))
     price_three = service.price * 6

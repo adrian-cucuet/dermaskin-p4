@@ -30,7 +30,28 @@
                     <li class="nav-item"><a class="nav-link" href="">Book Now</a></li>
                     <li class="nav-item"><a class="nav-link" href="">Contacts</a></li>
                     <li class="nav-item"><a class="nav-link" href="">Sign up</a></li>
-                </ul><a class="btn btn-primary shadow" role="button" href="">Sign up</a>
+                </ul>
+                <div class="dropdown mt-3 mb-1">
+                    <a aria-expanded="false" data-bs-toggle="dropdown" href="#">
+                        <span class="d-flex flex-column navbar-text me-2 bs-icon">
+                            <i class="las la-user-circle"></i>
+                            <p>Account</p>
+                        </span>
+                    </a>
+                    <div class="dropdown-menu">
+                        {% if request.user.is_authenticated %}
+                            {% if request.user.is_superuser %}
+                            <a href="" class="dropdown-item">Add service</a>
+                            <a href="" class="dropdown-item">Booking Management</a>
+                            {% endif %}
+                            <a href="" class="dropdown-item">My Profile</a>
+                            <a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a>
+                        {% else %}
+                            <a href="{% url 'account_signup' %}" class="dropdown-item">Register</a>
+                            <a href="{% url 'account_login' %}" class="dropdown-item">Login</a>
+                        {% endif %}
+                    </div>
+                </div>
             </div>
         </div>
     </nav>

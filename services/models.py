@@ -7,6 +7,7 @@ class Service(models.Model):
         verbose_name_plural = 'Services'
 
     name = models.CharField(max_length=300, null=True, blank=True)
+    slug = models.SlugField(max_length=300, unique=True)
     description = models.TextField(null=True, blank=True)
     benefits = models.TextField(null=True, blank=True)
     duration = models.IntegerField(null=True, blank=True)
