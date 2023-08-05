@@ -1,7 +1,7 @@
 import uuid
 from django.db import models
 from datetime import datetime
-from django.core.exceptions import ValidationError
+from profiles.models import UserProfile
 
 TIME = (
     ('10.00 - 11.00', '10.00 - 11.00'),
@@ -34,6 +34,9 @@ class Booking(models.Model):
 
     booking_number = models.CharField(max_length=50, null=False,
                                       editable=False)
+    user_profile = models.ForeignKey(UserProfile, on_delete=models.SET_NULL,
+                                     null=True, blank=True,
+                                     related_name='bookings')
     name = models.CharField(max_length=50)
     email = models.EmailField()
     phone = models.CharField(max_length=20, null=False, blank=False)

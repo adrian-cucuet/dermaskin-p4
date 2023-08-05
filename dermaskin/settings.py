@@ -50,6 +50,7 @@ INSTALLED_APPS = [
     'home',
     'services',
     'bookings',
+    'profiles',
 
     # 3rd party
     'django_summernote',
