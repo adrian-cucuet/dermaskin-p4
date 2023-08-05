@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect, reverse, get_object_or_404
 from decimal import Decimal
 from .models import Service
 from .forms import ServiceForm
+from django.contrib import messages
 
 
 def services(request):
@@ -35,18 +36,42 @@ def add_service(request):
     if request.method == 'POST':
         form = ServiceForm(request.POST, request.FILES)
         if form.is_valid():
+            form.slug = slugify(form.name)
             service = form.save()
             messages.success(request, 'Successfully added service!')
-            return redirect(reverse('services', args=[service.slug]))
+            return redirect(reverse('services', args=[service.id]))
         else:
             messages.error(request, 'Failed to add service. \
                  Please ensure the form is valid.')
     else:
-        form = ProductForm()
+        form = ServiceForm()
 
-    template = 'services/add_service.html'
     context = {
         'form': form,
     }
 
-    return render(request, template, context)
+    return render(request, 'services/add_service.html', context)
+
+
+def edit_service(request, service_id):
+    """ Edit a product in the store """
+    service = get_object_or_404(Service, pk=service_id)
+    if request.method == 'POST':
+        form = ServiceForm(request.POST, request.FILES, instance=service)
+        if form.is_valid():
+            form.save()
+            messages.success(request, f'Successfully updated service  {service.name}!')
+            return redirect(reverse('services'))
+        else:
+            messages.error(request, 'Failed to update service. \
+                 Please ensure the form is valid.')
+    else:
+        form = ServiceForm(instance=service)
+        messages.info(request, f'You are editing {service.name}')
+
+    context = {
+        'form': form,
+        'service': service,
+    }
+
+    return render(request, 'services/edit_service.html', context)

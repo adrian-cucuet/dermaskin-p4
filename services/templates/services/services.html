@@ -14,6 +14,11 @@
         <div class="row row-cols-1 row-cols-md-2 mx-auto" style="max-width: 900px;">
             {% for service in services %}
             <div class="col mb-4">
+                {% if user.is_superuser %}
+                <div class="d-flex justify-content-center my-2">
+                    <a class="btn btn-outline-warning btn-sm" role="button" href="{% url 'edit_service' service.id %}">Edit Service</a>
+                </div>
+                {% endif %}
                 <div><a href="#"><img class="img-fluid shadow focus-ring w-100 fit-cover" src="{{ service.image.url }}" style="height: 250px;" loading="lazy" alt="" /></a>
                     <div class="py-4">
                         <h4 class="fw-bold">{{ service.name }}</h4>

@@ -8,6 +8,7 @@ class ServiceForm(forms.ModelForm):
     class Meta:
         model = Service
         fields = '__all__'
+        exclude = ['slug',]
 
     image = forms.ImageField(label='Image', required=False,
                              widget=CustomClearableFileInput)

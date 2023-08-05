@@ -9,6 +9,11 @@
             <div class="col-md-8 col-xl-6 text-center mx-auto">
                 <h2 class="fw-bold">{{ service.name }}</h2>
             </div>
+            {% if user.is_superuser %}
+                <div class="d-flex justify-content-center my-2">
+                    <a class="btn btn-outline-warning btn-sm" role="button" href="{% url 'edit_service' service.id %}">Edit Service</a>
+                </div>
+            {% endif %}
         </div>
     </div>
     <div class="container py-4 py-xl-4">
@@ -114,17 +119,17 @@
                             <ul class="list-unstyled">
                                 <li class="d-flex mb-2">
                                     <span class="bs-icon-xs bs-icon me-2">
-                                        <i class="las la-check-circle text-success"></i>
+                                        <i class="las la-check-circle text-success la-lg"></i>
                                     </span><span>Microneedling - one sessions</span>
                                 </li>
                                 <li class="d-flex mb-2">
                                     <span class="bs-icon-xs bs-icon me-2">
-                                        <i class="las la-times-circle text-danger"></i>
+                                        <i class="las la-times-circle text-danger la-lg"></i>
                                     </span><span>No discount.</span>
                                 </li>
                                 <li class="d-flex mb-2">
                                     <span class="bs-icon-xs bs-icon me-2">
-                                        <i class="las la-check-circle text-success"></i>
+                                        <i class="las la-check-circle text-success la-lg"></i>
                                     </span><span>Aloe Vera cooling mask.</span>
                                 </li>
                             </ul>
@@ -142,18 +147,18 @@
                         <div>
                             <ul class="list-unstyled">
                                 <li class="d-flex mb-2">
-                                    <span class="bs-icon-xs bs-icon-rounded bs-icon-primary-light bs-icon me-2">
-                                        <i class="las la-check-circle"></i>
+                                    <span class="bs-icon-xs bs-icon me-2">
+                                        <i class="las la-check-circle text-success la-lg"></i>
                                     </span><span>Microneedling - 3 sessions</span>
                                 </li>
                                 <li class="d-flex mb-2">
-                                    <span class="bs-icon-xs bs-icon-rounded bs-icon-primary-light bs-icon me-2">
-                                        <i class="las la-check-circle"></i>
+                                    <span class="bs-icon-xs bs-icon me-2">
+                                        <i class="las la-check-circle text-success la-lg"></i>
                                     </span><span>Discount 15%</span>
                                 </li>
                                 <li class="d-flex mb-2">
-                                    <span class="bs-icon-xs bs-icon-rounded bs-icon-primary-light bs-icon me-2">
-                                        <i class="las la-check-circle"></i>
+                                    <span class="bs-icon-xs bs-icon me-2">
+                                        <i class="las la-check-circle text-success la-lg"></i>
                                     </span><span>Hyaluronic colling mask</span>
                                 </li>
                             </ul>
@@ -174,18 +179,18 @@
                     <div class="card-footer p-4">
                         <ul class="list-unstyled">
                             <li class="d-flex mb-2">
-                                <span class="bs-icon-xs bs-icon-rounded bs-icon-primary-light bs-icon me-2">
-                                    <i class="las la-check-circle"></i>
+                                <span class="bs-icon-xs bs-icon me-2">
+                                    <i class="las la-check-circle text-success la-lg"></i>
                                 </span><span>Microneedling - 6 sessions.</span>
                             </li>
                             <li class="d-flex mb-2">
-                                <span class="bs-icon-xs bs-icon-rounded bs-icon-primary-light bs-icon me-2">
-                                    <i class="las la-check-circle"></i>
+                                <span class="bs-icon-xs bs-icon me-2">
+                                    <i class="las la-check-circle text-success la-lg"></i>
                                 </span><span>Discount 25%</span>
                             </li>
                             <li class="d-flex mb-2">
-                                <span class="bs-icon-xs bs-icon-rounded bs-icon-primary-light bs-icon me-2">
-                                    <i class="las la-check-circle"></i>
+                                <span class="bs-icon-xs bs-icon me-2">
+                                    <i class="las la-check-circle text-success la-lg"></i>
                                 </span><span>Collagen cooling mask.</span>
                             </li>
                         </ul>
