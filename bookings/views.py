@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect, reverse, get_object_or_404
 from .models import Booking
 from .forms import BookingForm
 from django.contrib import messages
+from datetime import datetime
 
 
 def bookings(request):
@@ -45,3 +46,40 @@ def booking_success(request, booking_number):
     }
 
     return render(request, template, context)
+
+
+def booking_management(request):
+    """ Display the user's profile. """
+    today = datetime.today()
+    bookings = Booking.objects.filter(date__gte=today)
+
+    context = {
+        'bookings': bookings,
+    }
+
+    return render(request, 'bookings/booking_management.html', context)
+
+
+# def edit_booking(request, booking_id):
+#     """ Edit a product in the store """
+#     booking = get_object_or_404(Booking, pk=booking_id)
+#     if request.method == 'POST':
+#         form = BookingForm(request.POST, request.FILES, instance=booking)
+#         if form.is_valid():
+#             form.save()
+#             messages.success(request, f'Successfully updated \
+#                  booking {booking.name}!')
+#             return redirect(reverse('booking_management'))
+#         else:
+#             messages.error(request, 'Failed to update booking. \
+#                  Please ensure the form is valid.')
+#     else:
+#         form = BookingForm(instance=booking)
+#         messages.info(request, f'You are editing {booking.name}')
+
+#     context = {
+#         'form': form,
+#         'booking': booking,
+#     }
+
+#     return render(request, 'bookings/edit_booking.html', context)
