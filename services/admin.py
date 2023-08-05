@@ -3,15 +3,10 @@ from .models import Service
 from django_summernote.admin import SummernoteModelAdmin
 
 
+@admin.register(Service)
 class ServiceAdmin(SummernoteModelAdmin):
-    summernote_fields = ('benefits', 'description',
-                         'faq1_answer', 'faq2_answer', 'faq3_answer',)
 
-    list_display = ('name', 'price', 'duration',)
-
-    list_filter = ('name', 'price',)
-
-    ordering = ('name',)
-
-
-admin.site.register(Service, ServiceAdmin)
+    list_display = ('name', 'price')
+    search_fields = ['name']
+    list_filter = ('name',)
+    summernote_fields = ('description', 'benefits', 'faq1_answer', 'faq2_answer', 'faq3_answer')
