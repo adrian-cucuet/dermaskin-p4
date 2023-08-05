@@ -3,6 +3,7 @@ from decimal import Decimal
 from .models import Service
 from .forms import ServiceForm
 from django.contrib import messages
+from django.utils.text import slugify
 
 
 def services(request):
@@ -36,10 +37,13 @@ def add_service(request):
     if request.method == 'POST':
         form = ServiceForm(request.POST, request.FILES)
         if form.is_valid():
-            form.slug = slugify(form.name)
-            service = form.save()
+            service = form.save(False)
+        if service.name and not service.slug:
+            service.slug = slugify(service.name)
+            service.save()
+
             messages.success(request, 'Successfully added service!')
-            return redirect(reverse('services', args=[service.id]))
+            return redirect(reverse('services'))
         else:
             messages.error(request, 'Failed to add service. \
                  Please ensure the form is valid.')
