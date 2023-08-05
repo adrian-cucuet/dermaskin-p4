@@ -45,7 +45,7 @@
                     <div class="dropdown-menu">
                         {% if request.user.is_authenticated %}
                             {% if request.user.is_superuser %}
-                            <a href="" class="dropdown-item">Add service</a>
+                            <a href="{% url 'add_service' %}" class="dropdown-item">Add service</a>
                             <a href="" class="dropdown-item">Booking Management</a>
                             {% endif %}
                             <a href="" class="dropdown-item">My Profile</a>
@@ -115,5 +115,8 @@
         </div>
     </footer>
 </body>
+
+{% block postloadjs %}
+{% endblock %}
 
 </html>
