@@ -27,12 +27,9 @@ TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-X_FRAME_OPTIONS = 'SAMEORIGIN'
-
-ALLOWED_HOSTS = ['dermaskin-pp4-37d6c98e9c3c.herokuapp.com', '8000-adriancucue-dermaskinp4-d3b4i9xe5su.ws-eu102.gitpod.io']
-
+ALLOWED_HOSTS = ["dermaskin-pp4-37d6c98e9c3c.herokuapp.com", "8000-adriancucue-dermaskinp4-d3b4i9xe5su.ws-eu102.gitpod.io"]
 
 # Application definition
 
@@ -61,6 +58,8 @@ INSTALLED_APPS = [
 ]
 
 SITE_ID = 1
+
+X_FRAME_OPTIONS = "SAMEORIGIN"
 
 LOGIN_REDIRECT_URL = '/'
 LOGOUT_REDIRECT_URL = '/'
