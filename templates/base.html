@@ -1,4 +1,3 @@
-
 {% load static %}
 
 <!DOCTYPE html>
@@ -8,10 +7,14 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <title>Home - DermaSkin</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
+    </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
+    <link rel="stylesheet"
+        href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
     <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
     <link rel="stylesheet" href="{% static 'css/base.css' %}">
 
@@ -26,40 +29,35 @@
                 <span class="text-primary"><i class="las la-mortar-pestle la-2x"></i></span>
                 <span>DermaSkin</span>
             </a>
-            <button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-1"><span class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+            <button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-1"><span
+                    class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
             <div class="collapse navbar-collapse" id="navcol-1">
                 <ul class="navbar-nav mx-auto">
                     <li class="nav-item"><a class="nav-link active" href="{% url 'home' %}">Home</a></li>
                     <li class="nav-item"><a class="nav-link" href="{% url 'services' %}">Services</a></li>
                     <li class="nav-item"><a class="nav-link" href="{% url 'bookings' %}">Book Now</a></li>
-                    <li class="nav-item"><a class="nav-link" href="">Contact</a></li>
-                </ul>
-                {% if request.user.is_authenticated %}
-                    <div class="nav-item nav-link text-black mx-auto">Hi, {{ user|capfirst }}!</div>
-                    {% else %}
-                    <div></div>
-                {% endif %}
-                <div class="dropdown mt-3 mb-1">
-                    <a aria-expanded="false" data-bs-toggle="dropdown" href="#">
-                        <span class="d-flex flex-column navbar-text me-2 bs-icon ds-icon">
-                            <i class="las la-user-circle"></i>
-                            <p>Account</p>
-                        </span>
-                    </a>
-                    <div class="dropdown-menu">
-                        {% if request.user.is_authenticated %}
+                    <li class="nav-item dropdown">
+                        <a class="nav-link" aria-expanded="false" data-bs-toggle="dropdown" href="#">My Account</a>
+                        <div class="dropdown-menu">
+                            {% if request.user.is_authenticated %}
                             {% if request.user.is_superuser %}
                             <a href="{% url 'add_service' %}" class="dropdown-item">Add service</a>
                             <a href="{% url 'booking_management' %}" class="dropdown-item">Booking Management</a>
                             {% endif %}
                             <a href="{% url 'profile' %}" class="dropdown-item">My Profile</a>
                             <a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a>
-                        {% else %}
+                            {% else %}
                             <a href="{% url 'account_signup' %}" class="dropdown-item">Register</a>
                             <a href="{% url 'account_login' %}" class="dropdown-item">Login</a>
-                        {% endif %}
-                    </div>
-                </div>
+                            {% endif %}
+                        </div>
+                    </li>
+                </ul>
+                {% if request.user.is_authenticated %}
+                    <div class="nav-item nav-link text-black order-last mx-auto">Hi, {{ user|capfirst }}!</div>
+                    {% else %}
+                    <div></div>
+                    {% endif %}
             </div>
         </div>
     </nav>
@@ -68,7 +66,8 @@
         <div class="row">
             <div class="col-md-8 offset-md-2">
                 {% for message in messages %}
-                <div class="alert {{ message.tags }} bg-{{ message.tags}}-subtle alert-dismissible fade show my-2" id="msg" role="alert">
+                <div class="alert {{ message.tags }} bg-{{ message.tags}}-subtle alert-dismissible fade show my-2"
+                    id="msg" role="alert">
                     {{ message | safe }}
                     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                 </div>
@@ -89,11 +88,11 @@
                         <li class="mb-2"><a href="{% url 'services' %}">Services</a></li>
                         <li class="mb-2"><a href="{% url 'bookings' %}">Book Now</a></li>
                         {% if request.user.is_authenticated %}
-                            <li class="mb-2"><a href="{% url 'profile' %}">My Profile</a></li>
-                            <li class="mb-2"><a href="{% url 'account_logout' %}">Logout</a></li>
+                        <li class="mb-2"><a href="{% url 'profile' %}">My Profile</a></li>
+                        <li class="mb-2"><a href="{% url 'account_logout' %}">Logout</a></li>
                         {% else %}
-                            <li class="mb-2"><a href="{% url 'account_signup' %}">Register</a></li>
-                            <li class="mb-2"><a href="{% url 'account_login' %}">Login</a></li>
+                        <li class="mb-2"><a href="{% url 'account_signup' %}">Register</a></li>
+                        <li class="mb-2"><a href="{% url 'account_login' %}">Login</a></li>
                         {% endif %}
                     </ul>
                 </div>
@@ -106,7 +105,8 @@
                         <li class="mb-2">Dublin 1 D12345</li>
                     </ul>
                 </div>
-                <div class="col-lg-3 text-center text-lg-start d-flex flex-column align-items-center align-self-center order-first align-items-lg-start order-lg-last">
+                <div
+                    class="col-lg-3 text-center text-lg-start d-flex flex-column align-items-center align-self-center order-first align-items-lg-start order-lg-last">
                     <div class="fw-bold d-flex align-items-center mb-2">
                         <span class="text-primary"><i class="las la-mortar-pestle la-2x"></i></span>
                         <span>DermaSkin</span>
