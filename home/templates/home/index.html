@@ -123,29 +123,30 @@
     <div class="container bg-primary-gradient py-5">
         <div class="row">
             <div class="col-md-8 col-xl-6 text-center mx-auto">
-                <p class="fw-bold text-success mb-2">Our Services</p>
-                <h3 class="fw-bold">What we can do for you</h3>
+                <p class="fw-bold text-success mb-2">We can help!</p>
+                <h3 class="fw-bold">Your skin is important to us</h3>
             </div>
         </div>
         <div class="py-5 p-lg-5">
             <div class="row row-cols-1 row-cols-md-2 mx-auto" style="max-width: 900px;">
+                {% for service in services %}
                 <div class="col mb-4">
                     <div class="card shadow-sm">
                         <div class="card-body px-4 py-5 px-md-5">
-                            <div
-                                class="bs-icon-xl d-flex justify-content-center align-items-center mb-3 bs-icon ds-icon-home">
+                            <div class="bs-icon-xl d-flex justify-content-center align-items-center mb-3 bs-icon ds-icon-home">
                                 <i class="las la-mortar-pestle"></i>
                             </div>
-                            <h5 class="fw-bold card-title">Botox</h5>
-                            <p class="text-muted card-text mb-4">Botox is a type of injectable treatment that can be
-                                used to relax muscles. This can be used to treat wrinkles, brow lift, and hyperhidrosis
-                                (excessive sweating)</p><button class="btn btn-outline-primary shadow"
-                                type="button">Learn
-                                more</button>
+                            <h5 class="fw-bold card-title">{{ service.name }}</h5>
+                            <p class="text-muted card-text mb-4">
+                                {{ service.description|truncatechars:200  | safe }}
+                            </p>
+                            <a class="btn btn-outline-dark btn-sm" role="button"
+                                href="{% url 'service_detail' service.slug %}">Read more</a>
                         </div>
                     </div>
                 </div>
-                <div class="col mb-4">
+                {% endfor %}
+                <!-- <div class="col mb-4">
                     <div class="card shadow-sm">
                         <div class="card-body px-4 py-5 px-md-5">
                             <div
@@ -190,7 +191,7 @@
                                 more</button>
                         </div>
                     </div>
-                </div>
+                </div> -->
             </div>
         </div>
     </div>
