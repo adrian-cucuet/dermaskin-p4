@@ -6,7 +6,7 @@ The users can create an account and save/update their contact information. The p
 
 ![ScreenShot](./documents/readme_images/AmiResponsiveImg.png)
 
-The live version of the website is available for you here : <a href="">DermaSkin</a>
+The live version of the website is available for you here : <a href="https://dermaskin-pp4-37d6c98e9c3c.herokuapp.com/">DermaSkin</a>
 
 # README CONTENTS # 
 
@@ -25,10 +25,10 @@ The live version of the website is available for you here : <a href="">DermaSkin
     * [Navigation Menu](#navigation-menu)
     * [User Registration and Login](#user-registration-and-login)
     * [Services](#services)
+    * [Service Detail](#service-detail)
     * [Booking service](#booking-service)
+    * [Profile Page](#profile-page)
     * [Booking management](#booking-management)
-    * [Responsive Design](#responsive-design)
-    * [User Authorization and Authentication](#user-authentication)
 
 * ## [Deployment](#deployment)
     * [Heroku Service](#herokucom-service)
@@ -48,85 +48,76 @@ The live version of the website is available for you here : <a href="">DermaSkin
 
   * As the site owner I want : 
   
-    * A visually appealing and professional looking website to attract users
-    * A simple and intuitive user interface that is easy to navigate
-    * The ability to manage user accounts and access
-    * The ability to manage and moderate user-generated content
-    * A responsive design that works well on variety of devices
-    * A way to communicate with users and provide support when neccessary
+    * A simple and intuitive user interface that is easy to navigate.
+    * The ability to manage user accounts and access.
+    * The ability to manage the services offered.
+    * The ability to receive bookings for services.
+    * A responsive design that works well on any device.
+    * The ability for the users to update personal detail and view booking history.
 
   * As the user, I would want : 
 
-    * The ability to create an account and manage my posts
-    * An easy and efficient way to browse the content
-    * The ability to post and share my own content with the community
-    * The ability to like, comment and interact with other users content
     * A responsive and user-friendly design that works well on any device
+    * An easy and efficient way to browse through pages of the website.
+    * The ability to create an account and see my appointments.
+    * The possibility to save my data for future bookings.
+    * The ability to book a service if I want.
 
 <hr>    
 
 ## Agile Methodologies ##
 
-The agile methodology approach was used here when creating my CarStyleAutos web application.
-I have achieved this by using the built in features of GitHub by creating a table of issues as well as the project to track the to-do list, and move them onto finished as I progressed with the sites features. 
+The agile methodology approach was used here when creating DermaSkin website.
 
-The User-Stories were marked with the features that would be a : 
+The MoSCoW principle was used when created the UserStories: 
 - Must have
 - Could Add
 
-The application still being in progress, will have features added in the future with constant progression towards a fully completed application with a ton of features for the users to interact with.
+The application will have more features added in the future with constant progression towards a fully completed application.
 
 <hr>
 
 ## 1. Scope ## 
 
-The website here aims to provide a platform for car enthusiasts to share their knowledge and passion for cars with a community of like-minded individuals. Users will be able to register an account, create posts, like and comment on other posts, and interact with other members of the community. The website will be simple and user-friendly, with a focus on providing a visually appealing and responsive design.
+The website aims to provide a platform for existing customers, and attract new customers for the business. Users will be able to register an account, save their data for future appointments, browse through services offered, book a service, and view a list of their bookings. The website is simple to use, with a focus on providing a visually appealing and responsive design.
 
 <hr>
 
 ## 2. Structure ##
 
-* Home Page - a landing page that provides an overview of the website and its features
+* Home Page - a landing page that provides an overview of the business and its services.
 * Register Page - a page where users can create a new account by providing their name, email address and a password.
-* Login Page - a page where users can log in to their account using their email address and password
-* Gallery Page -  a page where users can view all car posts that have been posted by the community
-* My Posts Page - a page where the user can manage/delete/edit or view their posts.
-* Add Post Page - a page where the user can add their post to the gallery on CarStyleAutos 
-* Edit Post Page - a page where the user can edit their currently posted car
+* Login Page - a page where users can log in to their account using their email address and password.
+* User Profile Page - a page where users can update their personal information and view a list of their appointments.
+* Service Page -  a page where users can view all the services offered.
+* Service Detail Page - a page where the user can see a detailed view of the service.
+* Bookings Page - a page where the user can create an appointment for any service offered by the business.
+* Add Service Page - a page where the admin/owner can add a new service on the website.
+* Edit Service Page - a page where the admin/owner can edit a service on the website.
+* Booking Management Page - a page where the admin/owner can see all the future appointments and customer details.
 
 <hr>
 
 ## 3. Skeleton ##
 
 Here is a basic wireframe of the website's layout : 
-![ScreenShot](./documents/readme_images/WireframeSketch.png)
+![ScreenShot](./documents/readme_images/wireframe-dermaskin.png)
 
 Here is the database schema for the project : 
-![ScreenShot](./documents/readme_images/DatabaseSchema.png)
+![ScreenShot](./documents/readme_images/database.png)
 
 <hr>
 
 ## 4. Surface ## 
 
-The design of CarStyleAutos is clean and modern, with a focus on readability and ease of use. The color scheme consists primarily of black,white, shades of gray, with red accents used sparingly for emphasis.
-
-
-### Colors -
-* The primary color used in the site is #333 for text, with red (#dc3545) used sparingly for emphasis. The following other colors are used :
-
-  * #f2f2f2: background color for body
-  * #fff: background color for navbar, modal and footer
-  * #dc3545: primary red color for buttons and text
-  * #333: primary text color
-  * #000000: shadow color for text
-  * #ddd: lighter shade of light gray color
-  * #eee: light gray color for button backgrounds
-  * #c82333: darker shade of primary red color
+The design of DermaSkin is clean and modern, with a focus on readability and ease of use. The color scheme consists primarily of white and blue, with green accents used sparingly for emphasis.
 
 ### Layout -
 
-The layout of CarStyleAutos is responsive and adapts well to different screen sizes. Bootstrap being used here provides that functionality. The navbar is fixed at the top of the screen and is always visible, with the site logo and navigation linkes centered and spread between. The Hero section uses a large background image with a gradient overlay, with a centered heading and subheading along with a Join Us button. Cards are used throughout the site to display content, such as car images , posts previews and forms. Modals are used for login/logout functionalities as well as other forms such as Adding a post and Deleting it.
-The footer is fixed always to the bottom of the screen containing the site information and social media links.
+The layout of DermaSkin is responsive and adapts well to different screen sizes. Bootstrap and Bootstrap Studio used in order to provide a responsive website. The navbar is fixed at the top of the screen and is always visible, with the site logo, navigation links centered and spread between.
+The Hero section uses a large background image, with a centered heading and subheading along with two buttons for Services page and Booking page.
+Cards are used throughout the site to display content, such as services, information about business, information about individual service and forms.
+The footer is fixed always to the bottom of the screen containing the contact details, navigation links, social media links and logo.
 
 <hr>
 
@@ -134,29 +125,32 @@ The footer is fixed always to the bottom of the screen containing the site infor
 
 <hr>
 
-## User registration and login :
+## Navigation:
+- A menu at the top of the page allows users to easily navigate between different pages on the site.
+![ScreenShot](./documents/readme_images/HomePage.png)
+## Home Page:
+ - The Home page contains information about the services offered and skin problems that the user could face.
+ ![ScreenShot](./documents/readme_images/GalleryPage.png)
+## User registration and login:
 - Users can create an account to access member-only features and log in to access their account in the future.
 ![ScreenShot](./documents/readme_images/SignUpForm.png)
 ![ScreenShot](./documents/readme_images/LoginForm.png)
-## Car Gallery :
+## Services:
  - A collection of posts of different types of cars. Users can view these images, leave comments and like the post/comments.
  ![ScreenShot](./documents/readme_images/GalleryPage.png)
-## User Posts :
- - Each user can create, edit and delete their own posts that appear on the site for others to see.
+## Service Detail:
+ - Each service has an individual page with important information, explanations, prices and FAQ.
  ![ScreenShot](./documents/readme_images/MyPostsPage.png)
-## Commenting system : 
-- Users can leave comments on posts made by other users.
+## Booking service:
+- Users can book a service on the booking page and submiting the form a success page is shown.
  ![ScreenShot](./documents/readme_images/CommentView.png)
-## Responsive design : 
-- The site is designed to work on variety of devices and screen sizes.
-![ScreenShot](./documents/readme_images/MobileView.png)
-
-## Navigation menu :
-- A menu at the top of the page allows users to easily navigate between different pages on the site.
-![ScreenShot](./documents/readme_images/HomePage.png)
-## User authentication and authorization: 
-- The site ensures that only authorized users can access certain features or pages.
-![ScreenShot](./documents/readme_images/UserAuthorization.png)
+ ![ScreenShot](./documents/readme_images/CommentView.png)
+## Profile Page:
+- Users can update their information on profile page and can see a history of bookings.
+ ![ScreenShot](./documents/readme_images/CommentView.png)
+## Booking management:
+- Admin/owner can have a complete view of future bookings, filtered automatically by date.
+ ![ScreenShot](./documents/readme_images/CommentView.png)
 
 <hr>
 
@@ -192,7 +186,7 @@ The footer is fixed always to the bottom of the screen containing the site infor
       * web: gunicorn carstyleautos.wsgi
 
 
-* You can find the deployed version of the website here : <a href="https://carstyleautos-blog.herokuapp.com" target="_blank">CarStyleAutos</a>
+* You can find the deployed version of the website here : <a href="https://dermaskin-pp4-37d6c98e9c3c.herokuapp.com/" target="_blank">DermaSkin</a>
 
 <hr>
 
@@ -210,13 +204,12 @@ The footer is fixed always to the bottom of the screen containing the site infor
   * <a href="https://getbootstrap.com/">Bootstrap (Front-End Library)</a>
   * <a href="https://django-crispy-forms.readthedocs.io/en/latest/">Django-Crispy-Forms (Django Form Rendering Library)</a>
   * <a href="https://pypi.org/project/psycopg2/">Psycopg2-Binary(PostgreSQL database adapter for Python)</a>
-  * <a href="https://balsamiq.com/wireframes/?gclid=CjwKCAjw0N6hBhAUEiwAXab-TS4-B3FwE_NpeSWRL6jqqSJMnuxinyknl1t_ddtaW_Jd3UAOvbxguhoC4agQAvD_BwE">Balsamiq Wireframes(Wireframe Software to sketch initial design)</a>
   * <a href="https://github.com/">GitHub (Version Control alongside a Local Development Enviroment)</a>
-  * <a href="https://fontawesome.com/">Font Awesome (Library of Icons)</a>
+  * <a href="https://icons8.com/">Icon8 (Library of Icons)</a>
   * <a href="https://www.elephantsql.com/">ElephantSQL (Hosting service for the database for this application)</a>
   * <a href="https://cloudinary.com/?&utm_campaign=1329&utm_content=instapagelogocta-selfservetest">Cloudinary (Cloud based storage for all media files)</a>
   * <a href="https://heroku.com/">Heroku (Application hosting service)</a>
-  * <a href="https://www.lucidchart.com/pages/">Lucidchart (Online Application for Flowcharts/Diagrams)</a>
+  * <a href="https://bootstrapstudio.io/">Bootstrap Studio</a>
 
 <hr>
 
@@ -224,19 +217,19 @@ The footer is fixed always to the bottom of the screen containing the site infor
 
 ### Coding ###
 
+* All the resources below, were extremly helpful in creating the project. Whenever I needed help stackoverflow and Code Institute walkthrough projects help immensily.
+
 * <a href="https://google.com">Google</a>
 * <a href="https://ui.dev/amiresponsive">AMI Responsive</a>
 * <a href="https://stackoverflow.com/">Stack Overflow</a>
-* <a href="https://youtube.com">YouTube</a>
-* <a href="https://w3schools.com">W3Schools</a>
+* <a href="https://freepik.com/">FreePik</a>
+* <a href="https://icons8.com">Icon8</a>
 * <a href="https://https://codeinstitute.net/">Code Institute</a>
 * <a href="https://getbootstrap.com/docs/5.3/getting-started/introduction/">Boostrap Documentations</a>
+* <a href="https://bootstrapstudio.io/">Boostrap Studio</a>
 
-* All those resources were very valuable in the progression of my project whenever I was stuck at any point in time I refered back to the course material as well as the online resources.
+* All my images were sourced from FreePik, and any copyrights are reserved for the owners as these are just for display purposes only.
 
-* All my images were sourced from google images, and any copyrights are reserved for the owners as these are just for display purposes only.
-
-
-### I would like to thank Code Institute for supplying me with the necessary guidance for this project. And Tutor support for certain things I was completely stuck at.
+* Of course, without Code Institute providing the necessary guidance, this project could not exist. And Student Care for providing support when needed the most.
 
 [def]: #credits

@@ -54,10 +54,10 @@
                     </li>
                 </ul>
                 {% if request.user.is_authenticated %}
-                    <div class="nav-item nav-link text-black order-last mx-auto">Hi, {{ user|capfirst }}!</div>
-                    {% else %}
-                    <div></div>
-                    {% endif %}
+                <div class="nav-item nav-link text-black order-last mx-auto">Hi, {{ user|capfirst }}!</div>
+                {% else %}
+                <div></div>
+                {% endif %}
             </div>
         </div>
     </nav>
