@@ -19,5 +19,28 @@ class BookingForm(forms.ModelForm):
     class Meta:
         model = Booking
         fields = '__all__'
-        exclude = ('user_profile',)
+        exclude = ('user_profile', 'status',)
         widgets = {'date': DateInput()}
+
+    def __init__(self, *args, **kwargs):
+        """
+        Add placeholders and classes, remove auto-generated
+        labels and set autofocus on first field
+        """
+        super().__init__(*args, **kwargs)
+        placeholders = {
+            'name': 'Your Name',
+            'email': 'Email Address',
+            'phone': 'Phone Number',
+            'service': 'Choose treatment',
+            'package': 'Choose package',
+            'date': 'Prefered date',
+            'time': 'Prefered time',
+        }
+
+        self.fields['name'].widget.attrs['autofocus'] = True
+        for field in self.fields:
+            placeholder = placeholders[field]
+            self.fields[field].widget.attrs['placeholder'] = placeholder
+            self.fields[field].widget.attrs['class'] = 'my-2'
+            self.fields[field].label = placeholder

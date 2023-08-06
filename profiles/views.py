@@ -20,7 +20,7 @@ def profile(request):
                  Please ensure the form is valid.')
 
     form = UserProfileForm(instance=profile)
-    bookings = profile.bookings.all()
+    bookings = profile.bookings.all().order_by('date')
 
     template = 'profiles/profile.html'
     context = {

@@ -28,6 +28,11 @@ PACKAGE = (
     ('Package Silver', 'Package Silver'),
     ('Package Gold', 'Package Gold'),
 )
+STATUS = (
+    (0, 'Pending'),
+    (1, 'Approved'),
+    (2, 'Canceled'),
+)
 
 
 class Booking(models.Model):
@@ -40,12 +45,12 @@ class Booking(models.Model):
     name = models.CharField(max_length=50)
     email = models.EmailField()
     phone = models.CharField(max_length=20, null=False, blank=False)
-    service = models.CharField(max_length=50,
-                               choices=SERVICE, default=SERVICE[0])
-    package = models.CharField(max_length=50, choices=PACKAGE,
-                               default=PACKAGE[0])
+    service = models.CharField(max_length=50, choices=SERVICE)
+    package = models.CharField(max_length=50, choices=PACKAGE)
     date = models.DateField()
-    time = models.CharField(max_length=15, choices=TIME, default=TIME[0])
+    time = models.CharField(max_length=15, choices=TIME)
+    status = models.CharField(max_length=100, choices=STATUS,
+                              default=STATUS[0])
 
     def _generate_booking_number(self):
         """

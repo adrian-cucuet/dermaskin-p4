@@ -9,7 +9,8 @@
                 <h2 class="fw-bold text-success">Bookings Management</h2>
                 <p class="text-muted">Below is a list of appointments that have not been honored.</p>
                 <br>
-                <a class="btn btn-outline-dark btn-sm" role="button" href="{% url 'home' %}"><i class="las la-arrow-left la-lg"></i> Back Home</a>
+                <a class="btn btn-outline-dark btn-sm" role="button" href="{% url 'home' %}"><i
+                        class="las la-arrow-left la-lg"></i> Back Home</a>
             </div>
         </div>
         <div class="row">
@@ -18,10 +19,10 @@
                     <table class="table">
                         <thead>
                             <tr>
+                                <th>Booking No:</th>
                                 <th>Name:</th>
                                 <th>Phone:</th>
                                 <th>Service:</th>
-                                <th>Package:</th>
                                 <th>Date:</th>
                                 <th>Time:</th>
                             </tr>
@@ -29,10 +30,10 @@
                         <tbody>
                             {% for booking in bookings %}
                             <tr>
+                                <td>{{ booking.booking_number|slice:8 }}</td>
                                 <td>{{ booking.name }}</td>
                                 <td>{{ booking.phone }}</td>
                                 <td>{{ booking.service }}</td>
-                                <td>{{ booking.package }}</td>
                                 <td>{{ booking.date }}</td>
                                 <td>{{ booking.time }}</td>
                             </tr>

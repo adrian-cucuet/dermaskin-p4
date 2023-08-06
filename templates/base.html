@@ -21,24 +21,25 @@
 
 <body>
     <nav class="navbar navbar-expand-md sticky-top navbar-shrink py-3 navbar-light" id="mainNav">
-        <div class="container"><a class="navbar-brand d-flex align-items-center" href="/"><span class="bs-icon-sm bs-icon-circle bs-icon-primary shadow d-flex justify-content-center align-items-center me-2 bs-icon"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-bezier">
-                        <path fill-rule="evenodd" d="M0 10.5A1.5 1.5 0 0 1 1.5 9h1A1.5 1.5 0 0 1 4 10.5v1A1.5 1.5 0 0 1 2.5 13h-1A1.5 1.5 0 0 1 0 11.5v-1zm1.5-.5a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1zm10.5.5A1.5 1.5 0 0 1 13.5 9h1a1.5 1.5 0 0 1 1.5 1.5v1a1.5 1.5 0 0 1-1.5 1.5h-1a1.5 1.5 0 0 1-1.5-1.5v-1zm1.5-.5a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1zM6 4.5A1.5 1.5 0 0 1 7.5 3h1A1.5 1.5 0 0 1 10 4.5v1A1.5 1.5 0 0 1 8.5 7h-1A1.5 1.5 0 0 1 6 5.5v-1zM7.5 4a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1z"></path>
-                        <path d="M6 4.5H1.866a1 1 0 1 0 0 1h2.668A6.517 6.517 0 0 0 1.814 9H2.5c.123 0 .244.015.358.043a5.517 5.517 0 0 1 3.185-3.185A1.503 1.503 0 0 1 6 5.5v-1zm3.957 1.358A1.5 1.5 0 0 0 10 5.5v-1h4.134a1 1 0 1 1 0 1h-2.668a6.517 6.517 0 0 1 2.72 3.5H13.5c-.123 0-.243.015-.358.043a5.517 5.517 0 0 0-3.185-3.185z"></path>
-                    </svg></span><span>DermaSkin</span></a><button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-1"><span class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center" href="{% url 'home' %}">
+                <span class="text-primary"><i class="las la-mortar-pestle la-2x"></i></span>
+                <span>DermaSkin</span>
+            </a>
+            <button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-1"><span class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
             <div class="collapse navbar-collapse" id="navcol-1">
                 <ul class="navbar-nav mx-auto">
                     <li class="nav-item"><a class="nav-link active" href="{% url 'home' %}">Home</a></li>
                     <li class="nav-item"><a class="nav-link" href="{% url 'services' %}">Services</a></li>
-                    <li class="nav-item"><a class="nav-link" href="">Price List</a></li>
                     <li class="nav-item"><a class="nav-link" href="{% url 'bookings' %}">Book Now</a></li>
-                    <li class="nav-item"><a class="nav-link" href="">Contacts</a></li>
+                    <li class="nav-item"><a class="nav-link" href="">Contact</a></li>
                 </ul>
                 {% if request.user.is_authenticated %}
                     <div class="nav-item nav-link text-black mx-auto">Hi, {{ user|capfirst }}!</div>
                     {% else %}
                     <div></div>
                 {% endif %}
-                <div class="dropdown mt-3 mb-1 mx-auto">
+                <div class="dropdown mt-3 mb-1">
                     <a aria-expanded="false" data-bs-toggle="dropdown" href="#">
                         <span class="d-flex flex-column navbar-text me-2 bs-icon ds-icon">
                             <i class="las la-user-circle"></i>
@@ -82,36 +83,46 @@
     <footer class="bg-primary-gradient">
         <div class="container py-4 py-lg-5">
             <div class="row justify-content-center">
-                <div class="col-sm-4 col-md-3 text-center text-lg-start d-flex flex-column">
-                    <h3 class="fs-6 fw-bold">Follow Us</h3>
-                    <ul class="list-unstyled">
-                        <li style="margin-bottom: .5rem;"><a href="#">Facebook</a></li>
-                        <li style="margin-bottom: .5rem;"><a href="#">Instagram</a></li>
-                        <li style="margin-bottom: .5rem;"><a href="#">YouTube</a></li>
-                    </ul>
-                </div>
-                <div class="col-sm-4 col-md-3 text-center text-lg-start d-flex flex-column">
+                <div class="col text-center text-lg-start d-flex flex-column">
                     <h3 class="fs-6 fw-bold">Menu</h3>
                     <ul class="list-unstyled">
-                        <li style="margin-bottom: .5rem;"><a href="#">About Us</a></li>
-                        <li style="margin-bottom: .5rem;"><a href="#">Book Now</a></li>
-                        <li style="margin-bottom: .5rem;"><a href="#">Contact</a></li>
+                        <li class="mb-2"><a href="{% url 'services' %}">Services</a></li>
+                        <li class="mb-2"><a href="{% url 'bookings' %}">Book Now</a></li>
+                        {% if request.user.is_authenticated %}
+                            <li class="mb-2"><a href="{% url 'profile' %}">My Profile</a></li>
+                            <li class="mb-2"><a href="{% url 'account_logout' %}">Logout</a></li>
+                        {% else %}
+                            <li class="mb-2"><a href="{% url 'account_signup' %}">Register</a></li>
+                            <li class="mb-2"><a href="{% url 'account_login' %}">Login</a></li>
+                        {% endif %}
                     </ul>
                 </div>
-                <div class="col-sm-4 col-md-3 text-center text-lg-start d-flex flex-column">
+                <div class="col text-center text-lg-start d-flex flex-column">
                     <h3 class="fs-6 fw-bold">Contact</h3>
                     <ul class="list-unstyled" style="margin-bottom: 15px;">
-                        <li style="margin-bottom: .5rem;">+123456789</li>
-                        <li style="margin-bottom: .5rem;">info@example.com</li>
-                        <li style="margin-bottom: .5rem;">12 Example Street</li>
+                        <li class="mb-2">+123456789</li>
+                        <li class="mb-2">info@example.com</li>
+                        <li class="mb-2">12 Example Street</li>
+                        <li class="mb-2">Dublin 1 D12345</li>
                     </ul>
                 </div>
                 <div class="col-lg-3 text-center text-lg-start d-flex flex-column align-items-center align-self-center order-first align-items-lg-start order-lg-last">
-                    <div class="fw-bold d-flex align-items-center mb-2"><span class="bs-icon-sm bs-icon-circle bs-icon-primary d-flex justify-content-center align-items-center bs-icon me-2"><svg class="bi bi-bezier" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16">
-                                <path fill-rule="evenodd" d="M0 10.5A1.5 1.5 0 0 1 1.5 9h1A1.5 1.5 0 0 1 4 10.5v1A1.5 1.5 0 0 1 2.5 13h-1A1.5 1.5 0 0 1 0 11.5v-1zm1.5-.5a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1zm10.5.5A1.5 1.5 0 0 1 13.5 9h1a1.5 1.5 0 0 1 1.5 1.5v1a1.5 1.5 0 0 1-1.5 1.5h-1a1.5 1.5 0 0 1-1.5-1.5v-1zm1.5-.5a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1zM6 4.5A1.5 1.5 0 0 1 7.5 3h1A1.5 1.5 0 0 1 10 4.5v1A1.5 1.5 0 0 1 8.5 7h-1A1.5 1.5 0 0 1 6 5.5v-1zM7.5 4a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1z"></path>
-                                <path d="M6 4.5H1.866a1 1 0 1 0 0 1h2.668A6.517 6.517 0 0 0 1.814 9H2.5c.123 0 .244.015.358.043a5.517 5.517 0 0 1 3.185-3.185A1.503 1.503 0 0 1 6 5.5v-1zm3.957 1.358A1.5 1.5 0 0 0 10 5.5v-1h4.134a1 1 0 1 1 0 1h-2.668a6.517 6.517 0 0 1 2.72 3.5H13.5c-.123 0-.243.015-.358.043a5.517 5.517 0 0 0-3.185-3.185z"></path>
-                            </svg></span><span>DermaSkin</span></div>
-                    <p class="mb-0">Copyright © 2023 DermaSkin</p>
+                    <div class="fw-bold d-flex align-items-center mb-2">
+                        <span class="text-primary"><i class="las la-mortar-pestle la-2x"></i></span>
+                        <span>DermaSkin</span>
+                    </div>
+                    <p class="mb-2">Copyright © 2023 DermaSkin</p>
+                    <div class="d-flex">
+                        <a href="#">
+                            <span class="text-primary"><i class="lab la-facebook la-lg"></i></span>
+                        </a>
+                        <a href="#">
+                            <span class="text-primary mx-3"><i class="lab la-instagram la-lg"></i></span>
+                        </a>
+                        <a href="#">
+                            <span class="text-primary"><i class="lab la-youtube la-lg"></i></span>
+                        </a>
+                    </div>
                     <hr>
                 </div>
             </div>

@@ -46,7 +46,7 @@ def booking_success(request, booking_number):
         booking.save()
 
     messages.success(request, f'Appointment successfully processed! \
-        Your appointment number is {booking_number}.')
+        Your appointment number is {booking_number[:8]}.')
 
     template = 'bookings/booking_success.html'
     context = {
@@ -60,35 +60,15 @@ def booking_success(request, booking_number):
 def booking_management(request):
     """ Display the user's profile. """
     today = datetime.today()
-    bookings = Booking.objects.filter(date__gte=today).order_by('date')
+
+    # Get all bookings scheduled for today or later
+    bookings = Booking.objects.filter(date__gte=today)
+
+    # Order the bookings by date
+    bookings = bookings.order_by('date')
 
     context = {
         'bookings': bookings,
     }
 
     return render(request, 'bookings/booking_management.html', context)
-
-
-# def edit_booking(request, booking_id):
-#     """ Edit a product in the store """
-#     booking = get_object_or_404(Booking, pk=booking_id)
-#     if request.method == 'POST':
-#         form = BookingForm(request.POST, request.FILES, instance=booking)
-#         if form.is_valid():
-#             form.save()
-#             messages.success(request, f'Successfully updated \
-#                  booking {booking.name}!')
-#             return redirect(reverse('booking_management'))
-#         else:
-#             messages.error(request, 'Failed to update booking. \
-#                  Please ensure the form is valid.')
-#     else:
-#         form = BookingForm(instance=booking)
-#         messages.info(request, f'You are editing {booking.name}')
-
-#     context = {
-#         'form': form,
-#         'booking': booking,
-#     }
-
-#     return render(request, 'bookings/edit_booking.html', context)

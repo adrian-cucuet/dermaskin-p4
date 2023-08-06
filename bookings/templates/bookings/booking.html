@@ -14,7 +14,9 @@
         </div>
         <div class="row row-cols-1 row-cols-md-2">
             <div class="col">
-                <img src="/media/skin-beauty-removebg.png" alt="">
+                <div class="p-xl-5 m-xl-5">
+                    <img class="w-100 h-100 fit-cover" src="{% static '/img/clinic-2.jpeg' %}" alt="">
+                </div>
             </div>
             <div class="col d-flex flex-column justify-content-center p-4">
                 <form action="{% url 'bookings' %}" method="POST" name="booking_form" data-bs-theme="light">

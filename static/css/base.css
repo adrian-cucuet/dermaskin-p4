@@ -70,14 +70,6 @@
     object-fit: cover;
 }
 
-.ds-header-bg {
-    height: 60vh;
-}
-
-.ds-text-header {
-    height: 100%;
-}
-
 .ds-icon-home {
     top: 1rem;
     right: 1rem;

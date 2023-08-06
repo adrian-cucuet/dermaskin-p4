@@ -12,13 +12,13 @@
                     <h2 class="text-uppercase fw-bold">Your skin is our canvas<br> let's create a masterpiece</h2>
                     <p class="my-3">Your skin is our passion. We believe that everyone deserves to have beautiful,
                         healthy skin. That's why we offer a wide range of skincare services</p>
-                    <a class="btn btn-primary me-2" role="button" href="#">Services</a>
-                    <a class="btn btn-outline-primary" role="button" href="#">About Us</a>
+                    <a class="btn btn-primary me-2" role="button" href="{% url 'services' %}">Services</a>
+                    <a class="btn btn-outline-primary" role="button" href="{% url 'bookings' %}">Book Now</a>
                 </div>
             </div>
             <div class="col-md-6 ds-img-header">
-                <div class="p-xl-5 m-xl-5"><img class="rounded img-fluid w-100 fit-cover"
-                        src="media/skin-beauty-removebg.png"></div>
+                <div class="p-xl-5 m-xl-5"><img class="img-fluid w-100 fit-cover"
+                        src="{% static '/img/skin-beauty-removebg.png' %}"></div>
             </div>
         </div>
     </div>
@@ -132,7 +132,7 @@
                         <div class="card-body px-4 py-5 px-md-5">
                             <div
                                 class="bs-icon-xl d-flex justify-content-center align-items-center mb-3 bs-icon ds-icon-home">
-                                <i class="las la-syringe"></i>
+                                <i class="las la-mortar-pestle"></i>
                             </div>
                             <h5 class="fw-bold card-title">Botox</h5>
                             <p class="text-muted card-text mb-4">Botox is a type of injectable treatment that can be
@@ -147,7 +147,7 @@
                         <div class="card-body px-4 py-5 px-md-5">
                             <div
                                 class="bs-icon-xl d-flex justify-content-center align-items-center mb-3 bs-icon ds-icon-home">
-                                <i class="las la-syringe"></i>
+                                <i class="las la-mortar-pestle"></i>
                             </div>
                             <h5 class="fw-bold card-title">Dermal fillers</h5>
                             <p class="text-muted card-text mb-4">Dermal fillers are substances that are injected into
@@ -162,7 +162,7 @@
                         <div class="card-body px-4 py-5 px-md-5">
                             <div
                                 class="bs-icon-xl d-flex justify-content-center align-items-center mb-3 bs-icon ds-icon-home">
-                                <i class="las la-syringe"></i>
+                                <i class="las la-mortar-pestle"></i>
                             </div>
                             <h5 class="fw-bold card-title">Microneedling</h5>
                             <p class="text-muted card-text mb-4">Microneedling is a type of treatment that uses tiny
@@ -177,65 +177,13 @@
                         <div class="card-body px-4 py-5 px-md-5">
                             <div
                                 class="bs-icon-xl d-flex justify-content-center align-items-center mb-3 bs-icon ds-icon-home">
-                                <i class="las la-syringe"></i>
+                                <i class="las la-mortar-pestle"></i>
                             </div>
                             <h5 class="fw-bold card-title">Juvederm</h5>
                             <p class="text-muted card-text mb-4">Juvederm is a type of dermal filler that is made from
                                 hyaluronic acid. Juvederm can be used to plump up wrinkles, fill in scars, and create a
                                 more youthful appearance.</p><button class="btn btn-outline-primary shadow" type="button">Learn
                                 more</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-<section class="py-5 mt-5">
-    <div class="container py-5">
-        <div class="row mb-5">
-            <div class="col-md-8 col-xl-6 text-center mx-auto">
-                <p class="fw-bold text-success mb-2">Testimonials</p>
-                <h2 class="fw-bold"><strong>What People Say About us</strong></h2>
-                <p class="text-muted">No matter the problem, our team can handle it.&nbsp;</p>
-            </div>
-        </div>
-        <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 d-sm-flex justify-content-sm-center">
-            <div class="col mb-4">
-                <div class="d-flex flex-column align-items-center align-items-sm-start">
-                    <p class="bg-body-tertiary border rounded border-0 border-light p-4">Nisi sit justo faucibus nec
-                        ornare amet, tortor torquent. Blandit class dapibus, aliquet morbi.</p>
-                    <div class="d-flex"><img class="rounded-circle flex-shrink-0 me-3 fit-cover" width="50" height="50"
-                            src="assets/img/team/avatar2.jpg">
-                        <div>
-                            <p class="fw-bold text-primary mb-0">John Smith</p>
-                            <p class="text-muted mb-0">Erat netus</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col mb-4">
-                <div class="d-flex flex-column align-items-center align-items-sm-start">
-                    <p class="bg-body-tertiary border rounded border-0 border-light p-4">Nisi sit justo faucibus nec
-                        ornare amet, tortor torquent. Blandit class dapibus, aliquet morbi.</p>
-                    <div class="d-flex"><img class="rounded-circle flex-shrink-0 me-3 fit-cover" width="50" height="50"
-                            src="assets/img/team/avatar4.jpg">
-                        <div>
-                            <p class="fw-bold text-primary mb-0">John Smith</p>
-                            <p class="text-muted mb-0">Erat netus</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col mb-4">
-                <div class="d-flex flex-column align-items-center align-items-sm-start">
-                    <p class="bg-body-tertiary border rounded border-0 border-light p-4">Nisi sit justo faucibus nec
-                        ornare amet, tortor torquent. Blandit class dapibus, aliquet morbi.</p>
-                    <div class="d-flex"><img class="rounded-circle flex-shrink-0 me-3 fit-cover" width="50" height="50"
-                            src="assets/img/team/avatar5.jpg">
-                        <div>
-                            <p class="fw-bold text-primary mb-0">John Smith</p>
-                            <p class="text-muted mb-0">Erat netus</p>
                         </div>
                     </div>
                 </div>
