@@ -1,108 +1,242 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# DermaSkin #
 
-Welcome adrian-cucuet,
+* This is my Project Portofolio 4 for Code Institue Diploma in Software Development - E-commerce Applications. The project is a website for a derma clinic. The idea was to present the user with information about services that are offered by the business and explain more about them. If the user decides to use the services of the clinic, the booking page offers that possibility.
+The users can create an account and save/update their contact information. The profile page offers a booking history as well. As a business owner, he can add services through the front-end, view all the future bookings and details, and can manage the products with a click of a button.
+<hr>
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. It's perfectly ok to use this template as the basis for your project submissions.
+![ScreenShot](./documents/readme_images/AmiResponsiveImg.png)
 
-You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Gitpod and the extensions we use. Some of this information has been updated since the video content was created. The last update to this file was: **September 1, 2021**
+The live version of the website is available for you here : <a href="">DermaSkin</a>
 
-## Gitpod Reminders
+# README CONTENTS # 
 
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
+<hr>
 
-`python3 -m http.server`
+* ## [UX](#ux-1)
+   * [User Stories](#user-stories)
+   * [Agile Methodologies](#agile-methodologies)
+   * [The Scope](#1-scope)
+   * [Structure](#2-structure)
+   * [Skeleton](#3-skeleton)
+   * [Surface](#4-surface)
 
-A blue button should appear to click: _Make Public_,
+* ## [Features](#features)
+    * [Home Page](#home-page)
+    * [Navigation Menu](#navigation-menu)
+    * [User Registration and Login](#user-registration-and-login)
+    * [Services](#services)
+    * [Booking service](#booking-service)
+    * [Booking management](#booking-management)
+    * [Responsive Design](#responsive-design)
+    * [User Authorization and Authentication](#user-authentication)
 
-Another blue button should appear to click: _Open Browser_.
+* ## [Deployment](#deployment)
+    * [Heroku Service](#herokucom-service)
+    * [Final Steps](#final-steps)
 
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
+* ## [Technologies Used]()
+    * [Languages Used](#languages)
+    * [Frameworks / Libraries](#frameworks-libraries)
 
-A blue button should appear to click: _Make Public_,
+* ## [Credits](#credits-1)
 
-Another blue button should appear to click: _Open Browser_.
+<hr>
 
-In Gitpod you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
+# UX #
 
-To log into the Heroku toolbelt CLI:
+## User Stories ##
 
-1. Log in to your Heroku account and go to *Account Settings* in the menu under your avatar.
-2. Scroll down to the *API Key* and click *Reveal*
-3. Copy the key
-4. In Gitpod, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
+  * As the site owner I want : 
+  
+    * A visually appealing and professional looking website to attract users
+    * A simple and intuitive user interface that is easy to navigate
+    * The ability to manage user accounts and access
+    * The ability to manage and moderate user-generated content
+    * A responsive design that works well on variety of devices
+    * A way to communicate with users and provide support when neccessary
 
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you so do not share it. If you accidentally make it public then you can create a new one with _Regenerate API Key_.
+  * As the user, I would want : 
 
-------
+    * The ability to create an account and manage my posts
+    * An easy and efficient way to browse the content
+    * The ability to post and share my own content with the community
+    * The ability to like, comment and interact with other users content
+    * A responsive and user-friendly design that works well on any device
 
-## Release History
+<hr>    
 
-We continually tweak and adjust this template to help give you the best experience. Here is the version history:
+## Agile Methodologies ##
 
-**September 1 2021:** Remove `PGHOSTADDR` environment variable.
+The agile methodology approach was used here when creating my CarStyleAutos web application.
+I have achieved this by using the built in features of GitHub by creating a table of issues as well as the project to track the to-do list, and move them onto finished as I progressed with the sites features. 
 
-**July 19 2021:** Remove `font_fix` script now that the terminal font issue is fixed.
+The User-Stories were marked with the features that would be a : 
+- Must have
+- Could Add
 
-**July 2 2021:** Remove extensions that are not available in Open VSX.
+The application still being in progress, will have features added in the future with constant progression towards a fully completed application with a ton of features for the users to interact with.
 
-**June 30 2021:** Combined the P4 and P5 templates into one file, added the uptime script. See the FAQ at the end of this file.
+<hr>
 
-**June 10 2021:** Added: `font_fix` script and alias to fix the Terminal font issue
+## 1. Scope ## 
 
-**May 10 2021:** Added `heroku_config` script to allow Heroku API key to be stored as an environment variable.
+The website here aims to provide a platform for car enthusiasts to share their knowledge and passion for cars with a community of like-minded individuals. Users will be able to register an account, create posts, like and comment on other posts, and interact with other members of the community. The website will be simple and user-friendly, with a focus on providing a visually appealing and responsive design.
 
-**April 7 2021:** Upgraded the template for VS Code instead of Theia.
+<hr>
 
-**October 21 2020:** Versions of the HTMLHint, Prettier, Bootstrap4 CDN and Auto Close extensions updated. The Python extension needs to stay the same version for now.
+## 2. Structure ##
 
-**October 08 2020:** Additional large Gitpod files (`core.mongo*` and `core.python*`) are now hidden in the Explorer, and have been added to the `.gitignore` by default.
+* Home Page - a landing page that provides an overview of the website and its features
+* Register Page - a page where users can create a new account by providing their name, email address and a password.
+* Login Page - a page where users can log in to their account using their email address and password
+* Gallery Page -  a page where users can view all car posts that have been posted by the community
+* My Posts Page - a page where the user can manage/delete/edit or view their posts.
+* Add Post Page - a page where the user can add their post to the gallery on CarStyleAutos 
+* Edit Post Page - a page where the user can edit their currently posted car
 
-**September 22 2020:** Gitpod occasionally creates large `core.Microsoft` files. These are now hidden in the Explorer. A `.gitignore` file has been created to make sure these files will not be committed, along with other common files.
+<hr>
 
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
+## 3. Skeleton ##
 
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
+Here is a basic wireframe of the website's layout : 
+![ScreenShot](./documents/readme_images/WireframeSketch.png)
 
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
+Here is the database schema for the project : 
+![ScreenShot](./documents/readme_images/DatabaseSchema.png)
 
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
+<hr>
 
-------
+## 4. Surface ## 
 
-## FAQ about the uptime script
+The design of CarStyleAutos is clean and modern, with a focus on readability and ease of use. The color scheme consists primarily of black,white, shades of gray, with red accents used sparingly for emphasis.
 
-**Why have you added this script?**
 
-It will help us to calculate how many running workspaces there are at any one time, which greatly helps us with cost and capacity planning. It will help us decide on the future direction of our cloud-based IDE strategy.
+### Colors -
+* The primary color used in the site is #333 for text, with red (#dc3545) used sparingly for emphasis. The following other colors are used :
 
-**How will this affect me?**
+  * #f2f2f2: background color for body
+  * #fff: background color for navbar, modal and footer
+  * #dc3545: primary red color for buttons and text
+  * #333: primary text color
+  * #000000: shadow color for text
+  * #ddd: lighter shade of light gray color
+  * #eee: light gray color for button backgrounds
+  * #c82333: darker shade of primary red color
 
-For everyday usage of Gitpod, it doesn’t have any effect at all. The script only captures the following data:
+### Layout -
 
-- An ID that is randomly generated each time the workspace is started.
-- The current date and time
-- The workspace status of “started” or “running”, which is sent every 5 minutes.
+The layout of CarStyleAutos is responsive and adapts well to different screen sizes. Bootstrap being used here provides that functionality. The navbar is fixed at the top of the screen and is always visible, with the site logo and navigation linkes centered and spread between. The Hero section uses a large background image with a gradient overlay, with a centered heading and subheading along with a Join Us button. Cards are used throughout the site to display content, such as car images , posts previews and forms. Modals are used for login/logout functionalities as well as other forms such as Adding a post and Deleting it.
+The footer is fixed always to the bottom of the screen containing the site information and social media links.
 
-It is not possible for us or anyone else to trace the random ID back to an individual, and no personal data is being captured. It will not slow down the workspace or affect your work.
+<hr>
 
-**So….?**
+# Features #
 
-We want to tell you this so that we are being completely transparent about the data we collect and what we do with it.
+<hr>
 
-**Can I opt out?**
+## User registration and login :
+- Users can create an account to access member-only features and log in to access their account in the future.
+![ScreenShot](./documents/readme_images/SignUpForm.png)
+![ScreenShot](./documents/readme_images/LoginForm.png)
+## Car Gallery :
+ - A collection of posts of different types of cars. Users can view these images, leave comments and like the post/comments.
+ ![ScreenShot](./documents/readme_images/GalleryPage.png)
+## User Posts :
+ - Each user can create, edit and delete their own posts that appear on the site for others to see.
+ ![ScreenShot](./documents/readme_images/MyPostsPage.png)
+## Commenting system : 
+- Users can leave comments on posts made by other users.
+ ![ScreenShot](./documents/readme_images/CommentView.png)
+## Responsive design : 
+- The site is designed to work on variety of devices and screen sizes.
+![ScreenShot](./documents/readme_images/MobileView.png)
 
-Yes, you can. Since no personally identifiable information is being captured, we'd appreciate it if you let the script run; however if you are unhappy with the idea, simply run the following commands from the terminal window after creating the workspace, and this will remove the uptime script:
+## Navigation menu :
+- A menu at the top of the page allows users to easily navigate between different pages on the site.
+![ScreenShot](./documents/readme_images/HomePage.png)
+## User authentication and authorization: 
+- The site ensures that only authorized users can access certain features or pages.
+![ScreenShot](./documents/readme_images/UserAuthorization.png)
 
-```
-pkill uptime.sh
-rm .vscode/uptime.sh
-```
+<hr>
 
-**Anything more?**
+# Testing # 
 
-Yes! We'd strongly encourage you to look at the source code of the `uptime.sh` file so that you know what it's doing. As future software developers, it will be great practice to see how these shell scripts work.
+ * I have created a seperate markdown documentation for the testing of this project. 
 
----
+ - You can view the testing here : [Testing.MD](./TESTING.md)
 
-Happy coding!
+ <hr>
+
+# Deployment #
+
+* ## Heroku.com Service ##
+
+  * Here we log in or create an account to begin with.
+  * On the dashboard view click 'Create New App' from the dropdown menu
+  * Choose your app-name and region
+  * Setup the CONFIG_VARS in the Settings tab in your project. 
+      * SECRET_KEY
+      * DATABASE_URL
+      * CLOUDINARY_URL
+
+      These three url's are to be set up and configured in your project.
+      These connect your Database , Cloudinary and your Django Enviroment Key.
+  * In the buildpack section in the settings tab add Python , then save changes.
+  * Last but not least Link your project under the Deploy tab by selecting it from your github repository.
+
+* ## Final Steps #
+
+  * Make sure your settings.py option DEBUG = True is set to FALSE.
+  * Ensure you have your Procfile created with the following code :
+      * web: gunicorn carstyleautos.wsgi
+
+
+* You can find the deployed version of the website here : <a href="https://carstyleautos-blog.herokuapp.com" target="_blank">CarStyleAutos</a>
+
+<hr>
+
+# Technologies Used #
+
+* ## Languages ##
+  * HTML
+  * CSS
+  * Python
+  * JavaScript
+
+* ## Frameworks / Libraries / Programs ##
+  * <a href="https://www.djangoproject.com/">Django (Python web Framework)</a> 
+  * <a href="https://jquery.com/">jQuery (Javascript Library)</a>
+  * <a href="https://getbootstrap.com/">Bootstrap (Front-End Library)</a>
+  * <a href="https://django-crispy-forms.readthedocs.io/en/latest/">Django-Crispy-Forms (Django Form Rendering Library)</a>
+  * <a href="https://pypi.org/project/psycopg2/">Psycopg2-Binary(PostgreSQL database adapter for Python)</a>
+  * <a href="https://balsamiq.com/wireframes/?gclid=CjwKCAjw0N6hBhAUEiwAXab-TS4-B3FwE_NpeSWRL6jqqSJMnuxinyknl1t_ddtaW_Jd3UAOvbxguhoC4agQAvD_BwE">Balsamiq Wireframes(Wireframe Software to sketch initial design)</a>
+  * <a href="https://github.com/">GitHub (Version Control alongside a Local Development Enviroment)</a>
+  * <a href="https://fontawesome.com/">Font Awesome (Library of Icons)</a>
+  * <a href="https://www.elephantsql.com/">ElephantSQL (Hosting service for the database for this application)</a>
+  * <a href="https://cloudinary.com/?&utm_campaign=1329&utm_content=instapagelogocta-selfservetest">Cloudinary (Cloud based storage for all media files)</a>
+  * <a href="https://heroku.com/">Heroku (Application hosting service)</a>
+  * <a href="https://www.lucidchart.com/pages/">Lucidchart (Online Application for Flowcharts/Diagrams)</a>
+
+<hr>
+
+# Credits #
+
+### Coding ###
+
+* <a href="https://google.com">Google</a>
+* <a href="https://ui.dev/amiresponsive">AMI Responsive</a>
+* <a href="https://stackoverflow.com/">Stack Overflow</a>
+* <a href="https://youtube.com">YouTube</a>
+* <a href="https://w3schools.com">W3Schools</a>
+* <a href="https://https://codeinstitute.net/">Code Institute</a>
+* <a href="https://getbootstrap.com/docs/5.3/getting-started/introduction/">Boostrap Documentations</a>
+
+* All those resources were very valuable in the progression of my project whenever I was stuck at any point in time I refered back to the course material as well as the online resources.
+
+* All my images were sourced from google images, and any copyrights are reserved for the owners as these are just for display purposes only.
+
+
+### I would like to thank Code Institute for supplying me with the necessary guidance for this project. And Tutor support for certain things I was completely stuck at.
+
+[def]: #credits
