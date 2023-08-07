@@ -21,19 +21,15 @@
 
 ## HTML Validator:
 
-- Was checked before final deployment and used the page source input
-
-![ScreenShot](./documents/readme_images/html-val.png)
+![ScreenShot](./documents/readme_images/HTML.png)
 
 ## CSS Validator:
 
-- Base CSS file:
+![ScreenShot](./documents/readme_images/CSS.png)
 
-![ScreenShot](./documents/readme_images/base-css.png)
+## Lighthouse:
 
-- This is the Bootstrap Studio CSS file:
-
-![ScreenShot](./documents/readme_images/bootstrap-min.png)
+![ScreenShot](./documents/readme_images/lighthouse.png)
 
 
 <details>

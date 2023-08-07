@@ -4,7 +4,7 @@
 The users can create an account and save/update their contact information. The profile page offers a booking history as well. As a business owner, he can add services through the front-end, view all the future bookings and details, and can manage the products with a click of a button.
 <hr>
 
-![ScreenShot](./documents/readme_images/AmiResponsiveImg.png)
+![ScreenShot](./documents/readme_images/responsive.png)
 
 The live version of the website is available for you here : <a href="https://dermaskin-pp4-37d6c98e9c3c.herokuapp.com/">DermaSkin</a>
 
@@ -29,6 +29,8 @@ The live version of the website is available for you here : <a href="https://der
     * [Booking service](#booking-service)
     * [Profile Page](#profile-page)
     * [Booking management](#booking-management)
+
+* ## [Testing](#testing)
 
 * ## [Deployment](#deployment)
     * [Heroku Service](#herokucom-service)
@@ -163,7 +165,7 @@ The footer is fixed always to the bottom of the screen containing the contact de
 
  * I have created a seperate markdown documentation for the testing of this project. 
 
- - You can view the testing here : [Testing.MD](./TESTING.md)
+ - You can view the testing here : [TESTING.MD](TESTING.md)
 
  <hr>
 
@@ -189,9 +191,6 @@ The footer is fixed always to the bottom of the screen containing the contact de
   * Make sure your settings.py option DEBUG = True is set to FALSE.
   * Ensure you have your Procfile created with the following code :
       * web: gunicorn carstyleautos.wsgi
-
-
-* You can find the deployed version of the website here : <a href="https://dermaskin-pp4-37d6c98e9c3c.herokuapp.com/" target="_blank">DermaSkin</a>
 
 <hr>
 
@@ -231,7 +230,7 @@ The footer is fixed always to the bottom of the screen containing the contact de
 * <a href="https://icons8.com">Icon8</a>
 * <a href="https://https://codeinstitute.net/">Code Institute</a>
 * <a href="https://getbootstrap.com/docs/5.3/getting-started/introduction/">Boostrap Documentations</a>
-* <a href="https://bootstrapstudio.io/">Boostrap Studio</a>
+* <a href="https://bootstrapstudio.io/">Boostrap Studio (creating the template)</a>
 
 * All my images were sourced from FreePik, and any copyrights are reserved for the owners as these are just for display purposes only.
 
